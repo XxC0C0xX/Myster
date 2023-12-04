@@ -201,7 +201,8 @@ def ddos():
 					ddos()
 				if relaunch == "n" or relaunch == "N" or relaunch == "no" or relaunch == "No":
 					style()
-					return printRed("\n                            Bye !")
+					printRed("\n                            Bye !")
+					sys.exit()
 				else:
 					style()
 					printRed("\n                     Error : Answer y/n")

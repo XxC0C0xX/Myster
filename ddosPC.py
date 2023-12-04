@@ -183,7 +183,7 @@ def ddos():
 					sys.exit()
 				else:
 					style()
-						printRed("\n                            Error : Answer y/n")
+					printRed("\n                            Error : Answer y/n")
 					relaunch = inputYellow("\n[*] Continue ? (y/n) : ")
 					
 	#Fermeture du paquet

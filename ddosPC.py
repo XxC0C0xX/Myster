@@ -40,7 +40,7 @@ def style():
 def now():
 	now = datetime.datetime.now()
 	now = str(now)
-	nowSecond = int(now[11:13])*3600 + 		int(now[14:16])*60 + int(now[17:19])
+	nowSecond = int(now[11:13])*3600 + int(now[14:16])*60 + int(now[17:19])
 	return nowSecond              
 	                     
 
@@ -179,7 +179,7 @@ def ddos():
 					ddos()
 				if relaunch == "n" or relaunch == "N" or relaunch == "no" or relaunch == "No":
 					style()
-					printRed("\n                            Bye !")
+					printRed("\n                                   Bye !")
 					sys.exit()
 				else:
 					style()

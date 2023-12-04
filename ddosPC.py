@@ -24,16 +24,16 @@ def style():
 		os.system("cls")
 	if sys.platform == "linux":
 		os.system("clear")
-	printCyan("============================================================")
-	printRed("       __   __    ____________      _____     __   __")
-	printRed("       \ \ / /    |  _  \  _  \    /  ___|    \ \ / /")
-	printRed("        \ V /__  _| | | | | | |___ \ `--.__  __\ V / ")
-	printRed("        /   \  \/ | | | | | / _ \ `--. \ \\ \/  /   \ ")
-	printRed("       / /^\ \>  <| |/ /| |/ / (_) /\__/ />  </ /^\ \\")
-	printRed("       \/   \/_/\_\___/ |___/ \___/\____//_/\_\/   \/")
-	printCyan("============================================================")
-	printLightPurple("                    //XxDDoSxX by C0C0\\\\") 
-	printCyan("============================================================")
+	printCyan("===========================================================================")
+	printRed("               __   __    ____________      _____     __   __")
+	printRed("               \ \ / /    |  _  \  _  \    /  ___|    \ \ / /")
+	printRed("                \ V /__  _| | | | | | |___ \ `--.__  __\ V / ")
+	printRed("                /   \  \/ | | | | | / _ \ `--. \ \\ \/  /   \ ")
+	printRed("               / /^\ \>  <| |/ /| |/ / (_) /\__/ />  </ /^\ \\")
+	printRed("               \/   \/_/\_\___/ |___/ \___/\____//_/\_\/   \/")
+	printCyan("===========================================================================")
+	printLightPurple("                           //XxDDoSxX by C0C0\\\\") 
+	printCyan("===========================================================================")
 
 
 # Setup de now (Heure actuelle en secondes)
@@ -67,7 +67,7 @@ def ddos():
 			break	
 		except:
 			style()
-			printRed("\n              Error : IP Adress is Not Found")
+			printRed("\n                      Error : IP Adress is Not Found")
 			ipSend = inputYellow("\n[1] IP or WebSite Adress : ")
 
 	# Vérifie que bytes est dans [1 ;65507]
@@ -81,7 +81,7 @@ def ddos():
 		except ValueError:
 				pass
 		style()
-		printRed("\n           Error : Number of Bytes is not interval")
+		printRed("\n                  Error : Number of Bytes is not interval")
 		bytes = inputYellow("\n[2] Bytes Send (int, Min : 1, Max : 65507) : ")
 	
 	# Vérifie que port est dans [1 ;65534]
@@ -95,7 +95,7 @@ def ddos():
 		except ValueError:
 				pass
 		style()
-		printRed("\n            Error : Number of Port is not interval")
+		printRed("\n                  Error : Number of Port is not interval")
 		port = inputYellow("\n[3] Port (int, Min : 1, Max : 65534) : ")
 
 	# Vérifie que time est dans [1 ;1439]
@@ -151,7 +151,7 @@ def ddos():
 		# Affichage des logs toutes les secondes
 		if sendTime != now():
 			style()
-			printRed("\n                 Press 'e' for stop attack")
+			printRed("\n                        Press 'e' for stop attack")
 			logs = "\n["+str(hoursPrint)+":"+str(minutePrint)+":"+str(secondsPrint)+"] Bytes send "+str(bytes)+" Adress "+str(ipSend)+" Port "+str(port)+" Packets "+str(PacketPerSecond)
 			printPurple(logs)
 			PacketPerSecondTotal += PacketPerSecond
@@ -170,7 +170,7 @@ def ddos():
 			secondsPrintTotal = "0" + str(secondsPrintTotal) if secondsPrintTotal < 10 else secondsPrintTotal
 			
 			style()
-			printRed("\n                          Finish !\n                        Total logs : ")
+			printRed("\n                                 Finish !\n                               Total logs : ")
 			logsTotal = "\n["+str(hoursPrintTotal)+":"+str(minutePrintTotal)+":"+str(secondsPrintTotal)+"] Bytes send "+str(bytes)+" Adress "+str(ipSend)+" Port "+str(port)+" Packets "+str(PacketPerSecondTotal)
 			printPurple(logsTotal)
 			relaunch = inputYellow("\n[*] Continue ? (y/n) : ")
@@ -183,7 +183,7 @@ def ddos():
 					sys.exit()
 				else:
 					style()
-					printRed("\n                     Error : Answer y/n")
+						printRed("\n                            Error : Answer y/n")
 					relaunch = inputYellow("\n[*] Continue ? (y/n) : ")
 					
 	#Fermeture du paquet

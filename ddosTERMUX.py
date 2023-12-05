@@ -114,10 +114,13 @@ def ddos():
 			        ip = socket.gethostbyname(ipSend)
 			        break	
 		        except:
-			        pass
-	style()
-	printRed("\n                      Error : IP Adress is Not Found")
-	ipSend = inputYellow("\n[1] IP or WebSite Adress : ")
+			        style()
+				printRed("\n                      Error : IP Adress is Not Found")
+				ipSend = inputYellow("\n[1] IP or WebSite Adress : ")
+	else:
+		style()
+		printRed("\n                      Error : IP Adress is Not Found")
+		ipSend = inputYellow("\n[1] IP or WebSite Adress : ")
 
 	# Vérifie que bytes est dans [1 ;65507]
 	style()		

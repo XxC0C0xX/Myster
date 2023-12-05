@@ -99,25 +99,25 @@ def ddos():
 	style()
 	ipSend = inputYellow("\n[1] IP or WebSite Adress : ")
 	if ipSend != "":
-	    if ipSend[0:8] == "https://":
-		    ipSend = ipSend[8:len(ipSend)]
-	
-	    elif ipSend[0:7] == "http://":
-		    ipSend = ipSend[7:len(ipSend)]
-	
-	    for i in range(len(ipSend)):
-		    if ipSend[i]=="/":
-			    ipSend = ipSend[0:i]
-			    break
-	    while True:
-		    try:
-			    ip = socket.gethostbyname(ipSend)
-			    break	
-		    except:
-			    pass
-	    style()
-	    printRed("\n                      Error : IP Adress is Not Found")
-	    ipSend = inputYellow("\n[1] IP or WebSite Adress : ")
+		if ipSend[0:8] == "https://":
+			ipSend = ipSend[8:len(ipSend)]
+		
+		elif ipSend[0:7] == "http://":
+			ipSend = ipSend[7:len(ipSend)]
+			
+		for i in range(len(ipSend)):
+		        if ipSend[i]=="/":
+				ipSend = ipSend[0:i]
+			        break
+	        while True:
+		        try:
+			        ip = socket.gethostbyname(ipSend)
+			        break	
+		        except:
+			        pass
+	style()
+	printRed("\n                      Error : IP Adress is Not Found")
+	ipSend = inputYellow("\n[1] IP or WebSite Adress : ")
 
 	# Vérifie que bytes est dans [1 ;65507]
 	style()		

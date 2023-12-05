@@ -108,13 +108,13 @@ def ddos():
 		for i in range(len(ipSend)):
 		        if ipSend[i]=="/":
 				ipSend = ipSend[0:i]
-			        break
-	        while True:
-		        try:
-			        ip = socket.gethostbyname(ipSend)
-			        break	
-		        except:
-			        style()
+				break
+		while True:
+			try:
+				ip = socket.gethostbyname(ipSend)
+				break	
+			except:
+				style()
 				printRed("\n                      Error : IP Adress is Not Found")
 				ipSend = inputYellow("\n[1] IP or WebSite Adress : ")
 	else:

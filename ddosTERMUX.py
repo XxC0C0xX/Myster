@@ -258,6 +258,8 @@ def ddos():
 				if relaunch == "n" or relaunch == "N" or relaunch == "no" or relaunch == "No":
 					style()
 					printRed("\n                                   Bye !")
+					t.sleep(2)
+					os.system("clear")
 					sys.exit()
 				else:
 					style()

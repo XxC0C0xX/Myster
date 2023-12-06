@@ -98,6 +98,11 @@ def ddos():
 	# Vérifie que l'adresse IP est fonctionnel
 	style()
 	ipSend = inputYellow("\n[1] IP or WebSite Adress : ")
+	while ipSend == "":
+		style()
+		printRed("\n                      Error : IP Adress is Not Found")
+		ipSend = inputYellow("\n[1] IP or WebSite Adress : ")
+		
 	if ipSend[0:8] == "https://":
 		ipSend = ipSend[8:len(ipSend)]
 	

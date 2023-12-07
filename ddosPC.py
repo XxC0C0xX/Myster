@@ -175,6 +175,8 @@ def ddos():
 	printPurple("\n[2]")
 	bytes = inputYellow(" Bytes send (int, Min : 1, Max : 65507) : ")
 	while True:
+		if bytes == "":
+			bytes = 250
 		try:
 			bytes = int(bytes)
 			if bytes >= 1 and bytes <= 65507:
@@ -193,6 +195,8 @@ def ddos():
 	printPurple("\n[3]")
 	port = inputYellow(" Port (int, Min : 1, Max : 65534) : ")
 	while True:
+		if port == "":
+			port = 80
 		try:
 			port = int(port)
 			if bytes >= 1 and bytes <= 65534:
@@ -208,9 +212,12 @@ def ddos():
 	# Vérifie que time est dans [1 ;1439]
 	style()	
 	global time
+	printGreen("\n                            Infos : Default 10")
 	printPurple("\n[4]")
 	time = inputYellow(" Time in Minutes (int, Min : 1, Max : 1439) : ")
 	while True:
+		if time == "":
+			time = 10
 		try:
 			time = int(time)
 			if time >= 1 and time <= 1439:
@@ -219,7 +226,8 @@ def ddos():
 		except ValueError:
 				pass
 		style()
-		printRed("\n            Error : Number of Time is not interval")
+		printGreen("\n                            Infos : Default 10")
+		printRed("            Error : Number of Time is not interval")
 		printPurple("\n[4]")
 		time = inputYellow(" Time in Minutes (int, Min : 1, Max : 1439) : ")
 

@@ -41,6 +41,7 @@ def style():
 	printLightPurple("                           //XxDDoSxX by C0C0\\\\") 
 	printCyan("===========================================================================")
 
+
 # Focntion de bienvenue
 def welcome():
 	style()

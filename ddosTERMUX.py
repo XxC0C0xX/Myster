@@ -312,6 +312,7 @@ def ddos():
 					style()
 					printRed("\n                                   Bye !")
 					t.sleep(2)
+					os.system("clear")
 					sys.exit()
 				else:
 					style()

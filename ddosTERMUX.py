@@ -54,6 +54,8 @@ def welcome():
 	printPurple("  [+]")
 	printInfos(" Latest update :", "07/12/2023")
 	printPurple("  [+]")
+	printInfos(" Exit XxDDoSxX :", "Press 'CTRL + C'")
+	printPurple("  [+]")
 	printRed(" I am not responsible for your actions\n")
 	printLightPurple("[Steps :]\n")
 	printPurple("  [1]")

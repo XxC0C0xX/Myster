@@ -147,6 +147,8 @@ def ddos():
 	printPurple("\n[1]")
 	ipSend = inputYellow(" IP or WebSite Adress : ")
 	while True:
+		if relaunch == "y" or relaunch == "Y" or relaunch == "yes" or relaunch == "Yes" and ipSend == "":
+			break
 		if ipSend != "":
 			if ipSend[0:8] == "https://":
 				ipSend = ipSend[8:len(ipSend)]

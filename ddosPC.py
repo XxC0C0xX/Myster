@@ -47,7 +47,7 @@ def style():
 
 def welcome():
 	style()
-	printRed("\n                                 Welcome !\n                         Press 'enter' for continue\n")
+	printRed("\n                                 Welcome !\n                        Press 'enter' for continue\n")
 	printLightPurple("[Infos :]\n")
 	printPurple("  [+]")
 	printInfos(" Github :","https://github.com/XxC0C0xX")

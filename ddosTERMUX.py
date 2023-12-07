@@ -54,6 +54,8 @@ def welcome():
 	printPurple("  [+]")
 	printInfos(" Latest update :", "07/12/2023")
 	printPurple("  [+]")
+	printInfos(" Python version :", "3.11.6")
+	printPurple("  [+]")
 	printInfos(" Exit XxDDoSxX :", "Press 'CTRL + C'")
 	printPurple("  [+]")
 	printRed(" I am not responsible for your actions\n")

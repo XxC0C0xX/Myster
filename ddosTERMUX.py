@@ -224,7 +224,7 @@ def ddos():
 				pass
 		style()
 		printGreen("\n                            Infos : Default 10")
-		printRed("            Error : Number of Time is not interval")
+		printRed("                  Error : Number of Time is not interval")
 		printPurple("\n[4]")
 		time = inputYellow(" Time in Minutes (int, Min : 1, Max : 1439) : ")
 

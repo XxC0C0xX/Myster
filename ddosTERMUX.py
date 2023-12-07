@@ -134,8 +134,13 @@ def now():
 	                     
 
 # Programme principal
-welcome()
-infos = input()
+while True:
+	welcome()
+	infos = select.select([sys.stdin])
+	if infos:
+		infos = sys.stdin.readline().strip()
+		if infos == "":
+			break
 def ddos():
 	
 	

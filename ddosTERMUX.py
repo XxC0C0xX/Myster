@@ -135,8 +135,7 @@ def now():
 
 # Définition des variables
 relaunch = ""
-ipSend = ""
-global relaunch, ipSend
+ip = ""
 	                     
 
 # Programme principal
@@ -145,7 +144,7 @@ infos = input()
 def ddos():
 	
 
-	global relaunch, ipSend
+	global relaunch, ip
 	style()
 	printGreen("\n                     Infos : Works best with local IP")
 	if relaunch == "y" or relaunch == "Y" or relaunch == "yes" or relaunch == "Yes":
@@ -154,7 +153,6 @@ def ddos():
 	ipSend = inputYellow(" IP or WebSite Adress : ")
 	while True:
 		if relaunch == "y" or relaunch == "Y" or relaunch == "yes" or relaunch == "Yes" and ipSend == "":
-			ip = socket.gethostbyname(ipSend)
 			break
 		if ipSend != "":
 			if ipSend[0:8] == "https://":

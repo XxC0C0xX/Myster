@@ -171,6 +171,7 @@ def ddos():
 
 	# Vérifie que bytes est dans [1 ;65507]
 	style()
+	printGreen("\n                           Infos : Default 250")
 	printPurple("\n[2]")
 	bytes = inputYellow(" Bytes send (int, Min : 1, Max : 65507) : ")
 	while True:
@@ -181,12 +182,14 @@ def ddos():
 		except ValueError:
 				pass
 		style()
-		printRed("\n                  Error : Number of Bytes is not interval")
+		printGreen("\n                           Infos : Default 250")
+		printRed("                  Error : Number of Bytes is not interval")
 		printPurple("\n[2]")
 		bytes = inputYellow(" Bytes send (int, Min : 1, Max : 65507) : ")
 	
 	# Vérifie que port est dans [1 ;65534]
 	style()
+	printGreen("\n                            Infos : Default 80")
 	printPurple("\n[3]")
 	port = inputYellow(" Port (int, Min : 1, Max : 65534) : ")
 	while True:
@@ -197,7 +200,8 @@ def ddos():
 		except ValueError:
 				pass
 		style()
-		printRed("\n                  Error : Number of Port is not interval")
+		printGreen("\n                            Infos : Default 80")
+		printRed("                 Error : Number of Port is not interval")
 		printPurple("\n[3]")
 		port = inputYellow(" Port (int, Min : 1, Max : 65534) : ")
 

@@ -135,7 +135,7 @@ def now():
 
 # Définition des variables
 relaunch = ""
-ip = ""
+ipSend = ""
 	                     
 
 # Programme principal
@@ -144,7 +144,7 @@ infos = input()
 def ddos():
 	
 
-	global relaunch, ip
+	global relaunch, ipSend
 	style()
 	printGreen("\n                     Infos : Works best with local IP")
 	if relaunch == "y" or relaunch == "Y" or relaunch == "yes" or relaunch == "Yes":
@@ -153,6 +153,7 @@ def ddos():
 	ipSend = inputYellow(" IP or WebSite Adress : ")
 	while True:
 		if relaunch == "y" or relaunch == "Y" or relaunch == "yes" or relaunch == "Yes" and ipSend == "":
+			ip = socket.gethostbyname(ipSend)
 			break
 		if ipSend != "":
 			if ipSend[0:8] == "https://":
@@ -166,6 +167,7 @@ def ddos():
 					ipSend = ipSend[0:i]
 					break
 			try:
+				ipSave = ipSend
 				ip = socket.gethostbyname(ipSend)
 				break
 			except:
@@ -333,21 +335,21 @@ def ddos():
 			relaunch = inputYellow(" Relaunch ? (y/n) : ")
 			while True:
 				if relaunch == "y" or relaunch == "Y" or relaunch == "yes" or relaunch == "Yes":
+					sock.close()
 					return relaunch, ip
 				if relaunch == "n" or relaunch == "N" or relaunch == "no" or relaunch == "No":
 					style()
 					printRed("\n                                   Bye !")
 					t.sleep(2)
 					os.system("clear")
+					sock.close()
 					sys.exit()
 				else:
 					style()
 					printRed("\n                            Error : Answer y/n")
 					printPurple("\n[*]")
 					relaunch = inputYellow(" Relaunch ? (y/n) : ")
-					
-	#Fermeture du paquet
-	sock.close()
+
 
 # Démaragge du programme principal	
 ddos()

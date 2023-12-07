@@ -61,7 +61,7 @@ def welcome():
 	printPurple("  [+]")
 	printInfos(" Exit XxDDoSxX :", "Press 'CTRL + C'")
 	printPurple("  [+]")
-	printRed(" I am not responsible for your actions\n")
+	printRed(" I am not responsible for your actions\n\n")
 	printLightPurple("[Steps :]\n")
 	printPurple("  [1]")
 	printYellow(" IP or WebSite Adress")
@@ -143,6 +143,7 @@ def ddos():
 	
 	
 	style()
+	printGreen("\n                     Infos : Works best with local IP")
 	printPurple("\n[1]")
 	ipSend = inputYellow(" IP or WebSite Adress : ")
 	while True:
@@ -163,7 +164,8 @@ def ddos():
 			except:
 				pass
 		style()
-		printRed("\n                      Error : IP Adress is not found")
+		printGreen("\n                     Infos : Works best with local IP")
+		printRed("                      Error : IP Adress is not found")
 		printPurple("\n[1]")
 		ipSend = inputYellow(" IP or WebSite Adress : ")
 

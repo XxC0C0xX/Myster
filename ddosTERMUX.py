@@ -136,6 +136,7 @@ def now():
 # Définition des variables
 relaunch = ""
 ipSend = ""
+global relaunch, ipSend
 	                     
 
 # Programme principal

@@ -153,6 +153,7 @@ def ddos():
 	ipSend = inputYellow(" IP or WebSite Adress : ")
 	while True:
 		if relaunch == "y" or relaunch == "Y" or relaunch == "yes" or relaunch == "Yes" and ipSend == "":
+			ip = socket.gethostbyname(ipSend)
 			break
 		if ipSend != "":
 			if ipSend[0:8] == "https://":

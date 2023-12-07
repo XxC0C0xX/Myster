@@ -304,7 +304,7 @@ def ddos():
 			printPurple(logsTotalHours)
 			printGreen(logsTotal)
 			printPurple("\n[*]")
-			relaunch = inputYellow(" Relaucnh ? (y/n) : ")
+			relaunch = inputYellow(" Relaunch ? (y/n) : ")
 			while True:
 				if relaunch == "y" or relaunch == "Y" or relaunch == "yes" or relaunch == "Yes":
 					ddos()

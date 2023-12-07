@@ -130,7 +130,12 @@ def now():
 	now = datetime.datetime.now()
 	now = str(now)
 	nowSecond = int(now[11:13])*3600 + int(now[14:16])*60 + int(now[17:19])
-	return nowSecond              
+	return nowSecond   
+
+
+# Définition des variables
+relaunch = ""
+ipSend = ""
 	                     
 
 # Programme principal

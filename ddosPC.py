@@ -72,7 +72,7 @@ def welcome():
 	printPurple("  [4]")
 	printYellow(" Time in minutes")
 	printPurple("  [*]")
-	printYellow(" Relaunch")
+	printYellow(" Relaunch\n\n")
 
 
 

@@ -45,6 +45,7 @@ def style():
 	printCyan("===========================================================================")
 
 
+# Focntion de bienvenue
 def welcome():
 	style()
 	printRed("\n                                 Welcome !\n                        Press 'enter' for continue\n")

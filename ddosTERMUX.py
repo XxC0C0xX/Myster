@@ -220,6 +220,7 @@ def ddos():
 			while timeLocal != 0:
 				input = sys.stdin.readline().strip()
 				if input == "":
+					exit = ""
 					return exit
 
 	# Définition de thread

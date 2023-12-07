@@ -50,7 +50,7 @@ def welcome():
 	printPurple("  [+]")
 	printInfos(" Github :","https://github.com/XxC0C0xX")
 	printPurple("  [+]")
-	printInfos(" Version :","1.5")
+	printInfos(" XxDDoSxX version :","1.5")
 	printPurple("  [+]")
 	printInfos(" Latest update :", "07/12/2023")
 	printPurple("  [+]")

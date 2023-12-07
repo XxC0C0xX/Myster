@@ -58,7 +58,7 @@ def welcome():
 	printPurple("  [+]")
 	printInfos(" Exit XxDDoSxX :", "Press 'CTRL + C'")
 	printPurple("  [+]")
-	printRed(" I am not responsible for your actions\n")
+	printRed(" I am not responsible for your actions\n\n")
 	printLightPurple("[Steps :]\n")
 	printPurple("  [1]")
 	printYellow(" IP or WebSite Adress")
@@ -140,6 +140,7 @@ def ddos():
 	
 	
 	style()
+	printGreen("\n                     Infos : Works best with local IP")
 	printPurple("\n[1]")
 	ipSend = inputYellow(" IP or WebSite Adress : ")
 	while True:
@@ -160,12 +161,14 @@ def ddos():
 			except:
 				pass
 		style()
-		printRed("\n                      Error : IP Adress is not found")
+		printGreen("\n                     Infos : Works best with local IP")
+		printRed("                      Error : IP Adress is not found")
 		printPurple("\n[1]")
 		ipSend = inputYellow(" IP or WebSite Adress : ")
 
 	# Vérifie que bytes est dans [1 ;65507]
 	style()
+	printGreen("\n                           Infos : Default 250")
 	printPurple("\n[2]")
 	bytes = inputYellow(" Bytes send (int, Min : 1, Max : 65507) : ")
 	while True:
@@ -176,12 +179,14 @@ def ddos():
 		except ValueError:
 				pass
 		style()
-		printRed("\n                  Error : Number of Bytes is not interval")
+		printGreen("\n                           Infos : Default 250")
+		printRed("                  Error : Number of Bytes is not interval")
 		printPurple("\n[2]")
 		bytes = inputYellow(" Bytes send (int, Min : 1, Max : 65507) : ")
 	
 	# Vérifie que port est dans [1 ;65534]
 	style()
+	printGreen("\n                            Infos : Default 80")
 	printPurple("\n[3]")
 	port = inputYellow(" Port (int, Min : 1, Max : 65534) : ")
 	while True:
@@ -192,7 +197,8 @@ def ddos():
 		except ValueError:
 				pass
 		style()
-		printRed("\n                  Error : Number of Port is not interval")
+		printGreen("\n                            Infos : Default 80")
+		printRed("                  Error : Number of Port is not interval")
 		printPurple("\n[3]")
 		port = inputYellow(" Port (int, Min : 1, Max : 65534) : ")
 

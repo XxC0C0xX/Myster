@@ -130,11 +130,11 @@ def now():
 	                     
 
 # Programme principal
+welcome()
+infos = input()
 def ddos():
 	
 	
-	welcome()
-	infos = input()
 	style()
 	printPurple("\n[1]")
 	ipSend = inputYellow(" IP or WebSite Adress : ")

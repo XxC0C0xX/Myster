@@ -333,7 +333,7 @@ def ddos():
 			relaunch = inputYellow(" Relaunch ? (y/n) : ")
 			while True:
 				if relaunch == "y" or relaunch == "Y" or relaunch == "yes" or relaunch == "Yes":
-					ddos()
+					return relaunch, ip
 				if relaunch == "n" or relaunch == "N" or relaunch == "no" or relaunch == "No":
 					style()
 					printRed("\n                                   Bye !")
@@ -351,3 +351,5 @@ def ddos():
 
 # Démaragge du programme principal	
 ddos()
+while relaunch == "y" or relaunch == "Y" or relaunch == "yes" or relaunch == "Yes":
+	ddos()

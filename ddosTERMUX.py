@@ -154,8 +154,6 @@ def ddos():
 	while True:
 		if relaunch == "y" or relaunch == "Y" or relaunch == "yes" or relaunch == "Yes":
 			ip = socket.gethostbyname(ipSave)
-			print(ip, ipSave)
-			x = input()
 			break
 		if ipSend != "":
 			if ipSend[0:8] == "https://":
@@ -304,7 +302,7 @@ def ddos():
 			style()
 			printRed("\n                      Press 'Enter' for stop attack")
 			logsHours = "\n["+str(hoursPrint)+":"+str(minutePrint)+":"+str(secondsPrint)+"]"
-			logs = " Adress "+str(ipSend)+" Bytes send "+str(bytes)+" Port "+str(port)+" Packets "+str(PacketPerSecond)
+			logs = " Adress "+str(ipSave)+" Bytes send "+str(bytes)+" Port "+str(port)+" Packets "+str(PacketPerSecond)
 			printPurple(logsHours)
 			printGreen(logs)
 			PacketPerSecondTotal += PacketPerSecond
@@ -330,7 +328,7 @@ def ddos():
 			style()
 			printRed("\n                                 Finish !\n                               Total logs : ")
 			logsTotalHours = "\n["+str(hoursPrintTotal)+":"+str(minutePrintTotal)+":"+str(secondsPrintTotal)+"]"
-			logsTotal = " Adress "+str(ipSend)+" Bytes send "+str(bytes)+" Port "+str(port)+" Packets "+str(PacketPerSecondTotal)
+			logsTotal = " Adress "+str(ipSave)+" Bytes send "+str(bytes)+" Port "+str(port)+" Packets "+str(PacketPerSecondTotal)
 			printPurple(logsTotalHours)
 			printGreen(logsTotal)
 			printPurple("\n[*]")

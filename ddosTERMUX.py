@@ -152,7 +152,7 @@ def ddos():
 	printPurple("\n[1]")
 	ipSend = inputYellow(" IP or WebSite Adress : ")
 	while True:
-		if relaunch == "y" or relaunch == "Y" or relaunch == "yes" or relaunch == "Yes" and ipSend == "":
+		if relaunch == "y" and ipSend == "" or relaunch == "Y" and ipSend == "" or relaunch == "yes" and ipSend = "" or relaunch == "Yes" and ipSend == "":
 			ip = socket.gethostbyname(ipSave)
 			break
 		if ipSend != "":

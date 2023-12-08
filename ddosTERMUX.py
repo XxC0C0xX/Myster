@@ -153,8 +153,11 @@ def ddos():
 	ipSend = inputYellow(" IP or WebSite Adress : ")
 	while True:
 		if relaunch == "y" and ipSend == "" or relaunch == "Y" and ipSend == "" or relaunch == "yes" and ipSend == "" or relaunch == "Yes" and ipSend == "":
-			ip = socket.gethostbyname(ipSave)
-			break
+			try:
+				ip = socket.gethostbyname(ipSave)
+				break
+			except:
+				pass
 		if ipSend != "":
 			if ipSend[0:8] == "https://":
 				ipSend = ipSend[8:len(ipSend)]
@@ -175,7 +178,6 @@ def ddos():
 		style()
 		printGreen("\n                     Infos : Works best with local IP")
 		printRed("                      Error : IP Adress is not found")
-		relaunch == ""
 		printPurple("\n[1]")
 		ipSend = inputYellow(" IP or WebSite Adress : ")
 

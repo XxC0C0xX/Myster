@@ -151,7 +151,7 @@ def ddos():
 	style()
 	printGreen("\n                     Infos : Works best with local IP")
 	if relaunch == "y" or relaunch == "Y" or relaunch == "yes" or relaunch == "Yes":
-		printGreen("                      Press 'enter' for conserve IP")
+		printGreen("                      Press 'Enter' for conserve IP")
 	printPurple("\n[1]")
 	ipSend = inputYellow(" IP or WebSite Adress : ")
 	while True:

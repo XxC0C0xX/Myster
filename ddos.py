@@ -1,25 +1,6 @@
 import socket, os , datetime, sys, threading, select, time as t
 
 
-# Fonction pour quitter le programme
-def Quit():
-	quit, f, p = select.select([sys.stdin], [], [])
-
-	if quit:
-		while True:
-			quit = sys.stdin.readline().strip()
-			if quit == "exit":
-				style()
-				printRed("\n                                   Bye !")
-				t.sleep(2)
-				os.system("clear")
-				quit.join()
-				sys.exit()
-
-# Définition de quit
-quit = threading.Thread(target=Quit)
-quit.start()
-
 # Setup de print couleur
 def printRed(text):
  print("\033[91m{}\033[00m".format(text))

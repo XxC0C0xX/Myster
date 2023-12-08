@@ -10,4 +10,4 @@ git clone https://github.com/XxC0C0xX/XxDDoSxX
 
 cd XxDDoSxX
 
-python ddosTERMUX.py
+python ddos.py

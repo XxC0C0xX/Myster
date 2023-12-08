@@ -62,6 +62,8 @@ def welcome():
 	printLightPurple("[Steps :]\n")
 	printPurple("  [1]")
 	printYellow(" IP or WebSite Adress")
+	printPurple("  [1*]")
+	printYellow(" After relaunch conserve IP Adress")
 	printPurple("  [2]")
 	printYellow(" Bytes send")
 	printPurple("  [3]")

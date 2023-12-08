@@ -1,5 +1,25 @@
 import socket, os , datetime, sys, threading, select, time as t
 
+
+# Fonction pour quitter le programme
+def Quit():
+	quit, f, p = select.select([sys.stdin], [], [])
+
+	if quit:
+		while True:
+			quit = sys.stdin.readline().strip()
+			if quit == "exit":
+				style()
+				printRed("\n                                   Bye !")
+				t.sleep(2)
+				os.system("clear")
+				quit.join()
+				sys.exit()
+
+# Définition de quit
+quit = threading.Thread(target=Quit)
+quit.start()
+
 # Setup de print couleur
 def printRed(text):
  print("\033[91m{}\033[00m".format(text))
@@ -50,13 +70,13 @@ def welcome():
 	printPurple("  [+]")
 	printInfos(" Github :","https://github.com/XxC0C0xX")
 	printPurple("  [+]")
-	printInfos(" XxDDoSxX version :","1.5.3")
+	printInfos(" XxDDoSxX version :","1.5.4")
 	printPurple("  [+]")
-	printInfos(" Latest update :", "07/12/2023")
+	printInfos(" Latest update :", "08/12/2023")
 	printPurple("  [+]")
 	printInfos(" Python version :", "3.11.6")
 	printPurple("  [+]")
-	printInfos(" Exit XxDDoSxX :", "Press 'CTRL + C'")
+	printInfos(" Exit XxDDoSxX :", "Enter 'exit'")
 	printPurple("  [+]")
 	printRed(" I am not responsible for your actions\n\n")
 	printLightPurple("[Steps :]\n")

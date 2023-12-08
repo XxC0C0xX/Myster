@@ -175,6 +175,7 @@ def ddos():
 		style()
 		printGreen("\n                     Infos : Works best with local IP")
 		printRed("                      Error : IP Adress is not found")
+		relaunch == ""
 		printPurple("\n[1]")
 		ipSend = inputYellow(" IP or WebSite Adress : ")
 

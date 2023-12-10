@@ -394,8 +394,9 @@ except KeyboardInterrupt:
 			logsTotal = " Adress "+str(ipSave)+" Bytes send "+str(bytes)+" Port "+str(port)+" Packets "+str(packetPerSecondTotal)
 			printPurple(logsTotalHours)
 			printGreen(logsTotal)
+		if exit != "":
 			inputNoInterrupted()
-		if exit == "":
+		else:
 			os.system("clear")
 			sys.exit()
 		t.sleep(1)

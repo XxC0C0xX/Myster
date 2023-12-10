@@ -382,5 +382,6 @@ except KeyboardInterrupt:
 	t.sleep(2)
 	sock.close()
 	thread.join()
+	exit = "0"
 	os.system("clear")
 	sys.exit()

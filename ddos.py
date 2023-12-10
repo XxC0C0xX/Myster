@@ -387,19 +387,20 @@ try:
 	while relaunch == "y" or relaunch == "Y" or relaunch == "yes" or relaunch == "Yes":
 		ddos()
 except KeyboardInterrupt:
-	while True:
-		timeLocal = 0
-		thread.join()
-		style()
+	timeLocal = 0
+	thread.join()
+	style()
+	if startDDoS == True:
 		printRed("\n                                   Bye !\n                          Press 'Enter' for exit")
-		if startDDoS == True:
-			logsTotalHours = "\n["+str(hoursPrintTotal)+":"+str(minutePrintTotal)+":"+str(secondsPrintTotal)+"]"
-			logsTotal = " Adress "+str(ipSave)+" Bytes send "+str(bytes)+" Port "+str(port)+" Packets "+str(packetPerSecondTotal)
-			printPurple(logsTotalHours)
-			printGreen(logsTotal)
-			sys.exit()
-		else:
-			t.sleep(2)
-			os.system("clear")
-			sys.exit()
+		logsTotalHours = "\n["+str(hoursPrintTotal)+":"+str(minutePrintTotal)+":"+str(secondsPrintTotal)+"]"
+		logsTotal = " Adress "+str(ipSave)+" Bytes send "+str(bytes)+" Port "+str(port)+" Packets "+str(packetPerSecondTotal)
+		printPurple(logsTotalHours)
+		printGreen(logsTotal)
+		infos = input("\n\n")
+		os.system("clear")
+		sys.exit()
+	else:
+		printRed("\n                                   Bye !")
 		t.sleep(2)
+		os.system("clear")
+		sys.exit()

@@ -143,11 +143,15 @@ try:
 	welcome()
 	infos = input()
 except KeyboardInterrupt:
-	style()
-	printRed("\n                                   Bye !\n                          Press 'Enter' for exit\n\n")
-	infos = input()
-	os.system("clear")
-	sys.exit()
+	while True:
+		try:
+			style()
+			printRed("\n                                   Bye !\n                          Press 'Enter' for exit\n\n")
+			infos = input()
+			os.system("clear")
+			sys.exit()
+		except:
+			pass
 
 
 def ddos():
@@ -390,21 +394,25 @@ try:
 	while relaunch == "y" or relaunch == "Y" or relaunch == "yes" or relaunch == "Yes":
 		ddos()
 except KeyboardInterrupt:
-	style()
-	if startDDoS == True:
-		printRed("\n                                   Bye !\n                          Press 'Enter' for exit\n                               Total logs : ")
-		logsTotalHours = "\n["+str(hoursPrintTotal)+":"+str(minutePrintTotal)+":"+str(secondsPrintTotal)+"]"
-		logsTotal = " Adress "+str(ipSave)+" Bytes send "+str(bytes)+" Port "+str(port)+" Packets "+str(packetPerSecondTotal)
-		printPurple(logsTotalHours)
-		printGreen(logsTotal)
-		print("\n\n")
-		timeLocal = 0
-		thread.join()
-		infos = input()
-		os.system("clear")
-		sys.exit()
-	else:
-		printRed("\n                                   Bye !\n                          Press 'Enter' for exit\n\n")
-		infos = input()
-		os.system("clear")
-		sys.exit()
+	while True:
+		try:
+			style()
+			if startDDoS == True:
+				printRed("\n                                   Bye !\n                          Press 'Enter' for exit\n                               Total logs : ")
+				logsTotalHours = "\n["+str(hoursPrintTotal)+":"+str(minutePrintTotal)+":"+str(secondsPrintTotal)+"]"
+				logsTotal = " Adress "+str(ipSave)+" Bytes send "+str(bytes)+" Port "+str(port)+" Packets "+str(packetPerSecondTotal)
+				printPurple(logsTotalHours)
+				printGreen(logsTotal)
+				print("\n\n")
+				timeLocal = 0
+				thread.join()
+				infos = input()
+				os.system("clear")
+				sys.exit()
+			else:
+				printRed("\n                                   Bye !\n                          Press 'Enter' for exit\n\n")
+				infos = input()
+				os.system("clear")
+				sys.exit()
+		except:
+			pass

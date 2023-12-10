@@ -354,10 +354,10 @@ def ddos():
 
 			# Affichage des logs total
 			style()
-			if exit == "":
-				printRed("\n                               Total logs : ")
-			else:
+			if nowSecond == now():
 				printRed("\n                                 Finish !\n                               Total logs : ")
+			else:
+				printRed("\n                               Total logs : ")	
 			logsTotalHours = "\n["+str(hoursPrintTotal)+":"+str(minutePrintTotal)+":"+str(secondsPrintTotal)+"]"
 			logsTotal = " Adress "+str(ipSave)+" Bytes send "+str(bytes)+" Port "+str(port)+" Packets "+str(packetPerSecondTotal)
 			printPurple(logsTotalHours)

@@ -259,7 +259,6 @@ def ddos():
 		
 
 	# Fonction pour lire la console sans interrompre
-	global inputNoInterrupted
 	def inputNoInterrupted():
 		global exit, time, timeLocal
 		timeLocal = time
@@ -395,11 +394,7 @@ except KeyboardInterrupt:
 			logsTotal = " Adress "+str(ipSave)+" Bytes send "+str(bytes)+" Port "+str(port)+" Packets "+str(packetPerSecondTotal)
 			printPurple(logsTotalHours)
 			printGreen(logsTotal)
-			if exit != "":
-				inputNoInterrupted()
-			else:
-				os.system("clear")
-				sys.exit()
+			sys.exit()
 		else:
 			t.sleep(2)
 			os.system("clear")

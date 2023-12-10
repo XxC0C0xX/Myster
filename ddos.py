@@ -148,11 +148,12 @@ except KeyboardInterrupt:
 			style()
 			printRed("\n                                   Bye !\n                          Press 'Enter' for exit\n\n")
 			infos = input()
-			os.system("clear")
-			sys.exit()
+			break
 		except:
 			pass
-
+	os.system("clear")
+	sys.exit()
+			  
 
 def ddos():
 
@@ -407,12 +408,12 @@ except KeyboardInterrupt:
 				timeLocal = 0
 				thread.join()
 				infos = input()
-				os.system("clear")
-				sys.exit()
+				break
 			else:
 				printRed("\n                                   Bye !\n                          Press 'Enter' for exit\n\n")
 				infos = input()
-				os.system("clear")
-				sys.exit()
+				break
 		except:
 			pass
+	os.system("clear")
+	sys.exit()

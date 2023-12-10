@@ -144,8 +144,8 @@ try:
 	infos = input()
 except KeyboardInterrupt:
 	style()
-	printRed("\n                                   Bye !")
-	t.sleep(2)
+	printRed("\n                                   Bye !\n                          Press 'Enter' for exit")
+	infos = input()
 	os.system("clear")
 	sys.exit()
 
@@ -388,8 +388,8 @@ try:
 		ddos()
 except KeyboardInterrupt:
 	style()
+	printRed("\n                                   Bye !\n                          Press 'Enter' for exit")
 	if startDDoS == True:
-		printRed("\n                                   Bye !\n                          Press 'Enter' for exit")
 		logsTotalHours = "\n["+str(hoursPrintTotal)+":"+str(minutePrintTotal)+":"+str(secondsPrintTotal)+"]"
 		logsTotal = " Adress "+str(ipSave)+" Bytes send "+str(bytes)+" Port "+str(port)+" Packets "+str(packetPerSecondTotal)
 		printPurple(logsTotalHours)
@@ -401,7 +401,6 @@ except KeyboardInterrupt:
 		os.system("clear")
 		sys.exit()
 	else:
-		printRed("\n                                   Bye !")
-		t.sleep(2)
+		infos = input()
 		os.system("clear")
 		sys.exit()

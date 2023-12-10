@@ -1,7 +1,7 @@
 import socket, os , datetime, sys, threading, select, time as t
 
 
-# Setup de print couleur
+# Fonction print couleur
 def printRed(text):
  print("\033[91m{}\033[00m".format(text))
 
@@ -27,7 +27,7 @@ def printLightPurple(text):
 def printCyan(text):
  print("\033[96m{}\033[00m".format(text))
 
-# Setup de clear + bannière
+# Fonction clear + bannière
 def style():
 	os.system("clear")
 	printCyan("===========================================================================")
@@ -123,7 +123,7 @@ def loading():
 	t.sleep(1.2)
 
 
-# Setup de now (Heure actuelle en secondes)
+# Fonction now (Heure actuelle en secondes)
 def now():
 	now = datetime.datetime.now()
 	now = str(now)
@@ -131,7 +131,7 @@ def now():
 	return nowSecond   
 
 
-# Définition des variables, pre setup du ddos
+# Définition des variables, pre-setup du ddos
 relaunch = "0"
 ipSave = "0"
 startDDoS = False
@@ -311,6 +311,7 @@ def ddos():
 	# Coeur du DDoS
 	while True:
 
+		# Définition de la variable startDDoS
 		global startDDoS
 		startDDoS = True
 		
@@ -353,7 +354,8 @@ def ddos():
 
 			# Fin du thread
 			thread.join()
-			
+
+			# Remise à zéro des variables
 			exit = "0"
 			startDDoS = False
 

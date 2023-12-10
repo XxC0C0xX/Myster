@@ -350,6 +350,7 @@ def ddos():
 			thread.join()
 			
 			exit = "0"
+			startDDoS = False
 
 			# Affichage des logs total
 			style()
@@ -362,7 +363,6 @@ def ddos():
 
 			# Relancer
 			relaunch = inputYellow(" Relaunch ? (y/n) : ")
-			thread.join()
 			while True:
 				if relaunch == "y" or relaunch == "Y" or relaunch == "yes" or relaunch == "Yes":
 					sock.close()
@@ -396,7 +396,7 @@ except KeyboardInterrupt:
 		logsTotal = " Adress "+str(ipSave)+" Bytes send "+str(bytes)+" Port "+str(port)+" Packets "+str(packetPerSecondTotal)
 		printPurple(logsTotalHours)
 		printGreen(logsTotal)
-		infos = input("\n\n")
+		t.sleep(3)
 		os.system("clear")
 		sys.exit()
 	else:

@@ -273,6 +273,7 @@ def ddos():
 			return 0
 
 	# Définition de thread
+	global thread
 	thread = threading.Thread(target=inputNoInterrupted)
 
 

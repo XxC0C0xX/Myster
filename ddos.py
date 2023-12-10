@@ -144,7 +144,7 @@ try:
 	infos = input()
 except KeyboardInterrupt:
 	style()
-	printRed("\n                                   Bye !\n                          Press 'Enter' for exit")
+	printRed("\n                                   Bye !\n                          Press 'Enter' for exit\n\n")
 	infos = input()
 	os.system("clear")
 	sys.exit()
@@ -401,6 +401,7 @@ except KeyboardInterrupt:
 		os.system("clear")
 		sys.exit()
 	else:
+		print("\n\n")
 		infos = input()
 		os.system("clear")
 		sys.exit()

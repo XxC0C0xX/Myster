@@ -380,9 +380,11 @@ try:
 		ddos()
 except KeyboardInterrupt:
 	style()
-	printRed("\n                                   Bye !\n                      Press 'Enter' for exit")
+	printRed("\n                                   Bye !\n                         Press 'Enter' for exit")
 	logsTotalHours = "\n["+str(hoursPrintTotal)+":"+str(minutePrintTotal)+":"+str(secondsPrintTotal)+"]"
 	logsTotal = " Adress "+str(ipSave)+" Bytes send "+str(bytes)+" Port "+str(port)+" Packets "+str(packetPerSecondTotal)
+	printPurple(logsTotalHours)
+	printGreen(logsTotal)
 	t.sleep(2)
 	os.system("clear")
 	sys.exit()

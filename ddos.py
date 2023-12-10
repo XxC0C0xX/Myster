@@ -149,11 +149,7 @@ except KeyboardInterrupt:
 	sys.exit()
 
 
-def ddos():
-
-
-	# Définition des variables globals pour les logs total
-	global logsTotalHours, logsTotal, hoursPrintTotal, minutePrintTotal, secondsPrintTotal, ipSave, bytes, port, packetPerSecondTotal
+def ddos()
 	
 
 	# Vérifie l'adresse ip
@@ -381,10 +377,6 @@ try:
 except KeyboardInterrupt:
 	style()
 	printRed("\n                                   Bye !\n                         Press 'Enter' for exit")
-	logsTotalHours = "\n["+str(hoursPrintTotal)+":"+str(minutePrintTotal)+":"+str(secondsPrintTotal)+"]"
-	logsTotal = " Adress "+str(ipSave)+" Bytes send "+str(bytes)+" Port "+str(port)+" Packets "+str(packetPerSecondTotal)
-	printPurple(logsTotalHours)
-	printGreen(logsTotal)
 	infos = input()
 	os.system("clear")
 	sys.exit()

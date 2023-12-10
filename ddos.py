@@ -43,7 +43,7 @@ def style():
 	printCyan("===========================================================================")
 
 
-# Focntion de bienvenue
+# Fonction de bienvenue
 def welcome():
 	style()
 	printRed("\n                                 Welcome !\n                         Press 'Enter' for continue\n")
@@ -51,9 +51,9 @@ def welcome():
 	printPurple("  [+]")
 	printInfos(" Github :","https://github.com/XxC0C0xX")
 	printPurple("  [+]")
-	printInfos(" XxDDoSxX version :","1.5.4")
+	printInfos(" XxDDoSxX version :","1.5.6")
 	printPurple("  [+]")
-	printInfos(" Latest update :", "08/12/2023")
+	printInfos(" Latest update :", "10/12/2023")
 	printPurple("  [+]")
 	printInfos(" Python version :", "3.11.6")
 	printPurple("  [+]")
@@ -357,7 +357,15 @@ def ddos():
 					relaunch = inputYellow(" Relaunch ? (y/n) : ")
 
 
-# Démaragge du programme principal	
-ddos()
-while relaunch == "y" or relaunch == "Y" or relaunch == "yes" or relaunch == "Yes":
+# Démaragge du programme principal
+try:
 	ddos()
+	while relaunch == "y" or relaunch == "Y" or relaunch == "yes" or relaunch == "Yes":
+		ddos()
+except KeyboardInterrupt:
+	style()
+	printRed("\n                                   Bye !")
+	1t.sleep(2)
+	os.system("clear")
+	sock.close()
+	sys.exit()

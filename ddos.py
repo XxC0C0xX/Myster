@@ -155,7 +155,6 @@ def ddos():
 
 	# Définition des variables globals pour les logs total
 	global logsTotalHours, logsTotal, hoursPrintTotal, minutePrintTotal, secondsPrintTotal, ipSave, bytes, port, packetPerSecondTotal
-	global thread
 	
 
 	# Vérifie l'adresse ip
@@ -387,10 +386,10 @@ try:
 	while relaunch == "y" or relaunch == "Y" or relaunch == "yes" or relaunch == "Yes":
 		ddos()
 except KeyboardInterrupt:
-	timeLocal = 0
-	thread.join()
 	style()
 	if startDDoS == True:
+		timeLocal = 0
+		thread.join()
 		printRed("\n                                   Bye !\n                          Press 'Enter' for exit")
 		logsTotalHours = "\n["+str(hoursPrintTotal)+":"+str(minutePrintTotal)+":"+str(secondsPrintTotal)+"]"
 		logsTotal = " Adress "+str(ipSave)+" Bytes send "+str(bytes)+" Port "+str(port)+" Packets "+str(packetPerSecondTotal)

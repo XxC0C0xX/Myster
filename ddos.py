@@ -365,7 +365,7 @@ try:
 except KeyboardInterrupt:
 	style()
 	printRed("\n                                   Bye !")
-	1t.sleep(2)
+	t.sleep(2)
 	os.system("clear")
 	sock.close()
 	sys.exit()

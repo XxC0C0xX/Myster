@@ -155,6 +155,7 @@ def ddos():
 
 	# Définition des variables globals pour les logs total
 	global logsTotalHours, logsTotal, hoursPrintTotal, minutePrintTotal, secondsPrintTotal, ipSave, bytes, port, packetPerSecondTotal
+	global thread
 	
 
 	# Vérifie l'adresse ip
@@ -273,7 +274,6 @@ def ddos():
 			return 0
 
 	# Définition de thread
-	global thread
 	thread = threading.Thread(target=inputNoInterrupted)
 
 

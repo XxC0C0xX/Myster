@@ -265,6 +265,8 @@ def ddos():
 				if input == "":
 					exit = ""
 					return exit
+			input = "0"
+			return 0
 
 	# Définition de thread
 	global thread

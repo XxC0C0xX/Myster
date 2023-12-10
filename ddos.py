@@ -153,7 +153,7 @@ def ddos():
 
 
 	# Définition des variables globals pour les logs total
-	global logsTotalHours, logsTotal, hoursPrintTotal, minutePrintTotal, secondsPrintTotal, ipSave, bytes, port, packetsPerSecondTotal
+	global logsTotalHours, logsTotal, hoursPrintTotal, minutePrintTotal, secondsPrintTotal, ipSave, bytes, port, packetPerSecondTotal
 	
 
 	# Vérifie l'adresse ip

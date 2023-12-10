@@ -350,7 +350,6 @@ def ddos():
 			thread.join()
 			
 			exit = "0"
-			startDDoS = False
 
 			# Affichage des logs total
 			style()
@@ -363,6 +362,7 @@ def ddos():
 
 			# Relancer
 			relaunch = inputYellow(" Relaunch ? (y/n) : ")
+			thread.join()
 			while True:
 				if relaunch == "y" or relaunch == "Y" or relaunch == "yes" or relaunch == "Yes":
 					sock.close()

@@ -397,3 +397,4 @@ except KeyboardInterrupt:
 		if exit == "":
 			os.system("clear")
 			sys.exit()
+		t.sleep(1)

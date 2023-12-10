@@ -400,4 +400,4 @@ except KeyboardInterrupt:
 		else:
 			os.system("clear")
 			sys.exit()
-		t.sleep(1)
+		t.sleep(2)

@@ -142,8 +142,15 @@ ipSave = ""
 	                     
 
 # Programme principal
-welcome()
-infos = input()
+try:
+	welcome()
+	infos = input()
+except KeyboardInterrupt:
+	style()
+	printRed("\n                                   Bye !")
+	t.sleep(2)
+	os.system("clear")
+	sys.exit()
 def ddos():
 	
 
@@ -367,5 +374,4 @@ except KeyboardInterrupt:
 	printRed("\n                                   Bye !")
 	t.sleep(2)
 	os.system("clear")
-	sock.close()
 	sys.exit()

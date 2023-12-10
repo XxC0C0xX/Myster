@@ -396,7 +396,7 @@ except KeyboardInterrupt:
 		printGreen(logsTotal)
 		timeLocal = 0
 		thread.join()
-		infos = input("\n\n")
+		infos = input(" \n\n")
 		os.system("clear")
 		sys.exit()
 	else:

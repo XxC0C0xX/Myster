@@ -373,7 +373,6 @@ except KeyboardInterrupt:
 	style()
 	printRed("\n                                   Bye !")
 	t.sleep(2)
-	sock.close()
 	thread.join()
 	os.system("clear")
 	sys.exit()

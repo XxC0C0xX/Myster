@@ -394,9 +394,10 @@ except KeyboardInterrupt:
 		logsTotal = " Adress "+str(ipSave)+" Bytes send "+str(bytes)+" Port "+str(port)+" Packets "+str(packetPerSecondTotal)
 		printPurple(logsTotalHours)
 		printGreen(logsTotal)
+		print("\n\n")
 		timeLocal = 0
 		thread.join()
-		infos = input(" \n\n")
+		infos = input()
 		os.system("clear")
 		sys.exit()
 	else:

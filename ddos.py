@@ -266,6 +266,7 @@ def ddos():
 
 		if input:
 			while timeLocal != 0:
+				print("\n\n")
 				input = sys.stdin.readline().strip()
 				if input == "":
 					exit = ""
@@ -385,11 +386,14 @@ try:
 	while relaunch == "y" or relaunch == "Y" or relaunch == "yes" or relaunch == "Yes":
 		ddos()
 except KeyboardInterrupt:
-	style()
-	printRed("\n                                   Bye !\n                          Press 'Enter' for exit")
-	if startDDoS == True:
-		logsTotalHours = "\n["+str(hoursPrintTotal)+":"+str(minutePrintTotal)+":"+str(secondsPrintTotal)+"]"
-		logsTotal = " Adress "+str(ipSave)+" Bytes send "+str(bytes)+" Port "+str(port)+" Packets "+str(packetPerSecondTotal)
-		printPurple(logsTotalHours)
-		printGreen(logsTotal)
-	sys.exit()
+	while True:
+		style()
+		printRed("\n                                   Bye !\n                          Press 'Enter' for exit")
+		if startDDoS == True:
+			logsTotalHours = "\n["+str(hoursPrintTotal)+":"+str(minutePrintTotal)+":"+str(secondsPrintTotal)+"]"
+			logsTotal = " Adress "+str(ipSave)+" Bytes send "+str(bytes)+" Port "+str(port)+" Packets "+str(packetPerSecondTotal)
+			printPurple(logsTotalHours)
+			printGreen(logsTotal)
+		if exit == "":
+			os.system("clear")
+			sys.exit()

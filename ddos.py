@@ -49,7 +49,7 @@ def welcome():
 	printPurple("  [+]")
 	printInfos(" Github :","https://github.com/XxC0C0xX")
 	printPurple("  [+]")
-	printInfos(" XxDDoSxX version :","1.5.6")
+	printInfos(" XxDDoSxX version :","1.5.7")
 	printPurple("  [+]")
 	printInfos(" Latest update :", "10/12/2023")
 	printPurple("  [+]")
@@ -354,7 +354,10 @@ def ddos():
 
 			# Affichage des logs total
 			style()
-			printRed("\n                                 Finish !\n                               Total logs : ")
+			if exit == "":
+				printRed("\n                               Total logs : ")
+			else:
+				printRed("\n                                 Finish !\n                               Total logs : ")
 			logsTotalHours = "\n["+str(hoursPrintTotal)+":"+str(minutePrintTotal)+":"+str(secondsPrintTotal)+"]"
 			logsTotal = " Adress "+str(ipSave)+" Bytes send "+str(bytes)+" Port "+str(port)+" Packets "+str(packetPerSecondTotal)
 			printPurple(logsTotalHours)

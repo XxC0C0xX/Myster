@@ -341,7 +341,7 @@ def ddos():
 			secondsPrintTotal = "0" + str(secondsPrintTotal) if secondsPrintTotal < 10 else secondsPrintTotal
 
 			# Affichage des logs total
-			global logsTotalHours, logsTotal
+			global logsTotalHours, logsTotal, hoursPrintTotal, minutePrintTotal, secondsPrintTotal, ipSave, bytes, port, packetsPerSecondTotal
 			style()
 			printRed("\n                                 Finish !\n                               Total logs : ")
 			logsTotalHours = "\n["+str(hoursPrintTotal)+":"+str(minutePrintTotal)+":"+str(secondsPrintTotal)+"]"

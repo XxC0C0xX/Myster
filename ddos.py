@@ -55,7 +55,7 @@ def welcome():
 	printPurple("  [+]")
 	printInfos(" Python version :", "3.11.6")
 	printPurple("  [+]")
-	printInfos(" Exit XxDDoSxX :", "Press 'CRTL + C'")
+	printInfos(" Exit XxDDoSxX :", "Send 'CRTL + C'")
 	printPurple("  [+]")
 	printRed(" I am not responsible for your actions\n\n")
 	printLightPurple("[Steps :]\n")

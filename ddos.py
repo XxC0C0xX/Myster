@@ -388,7 +388,7 @@ try:
 		ddos()
 except KeyboardInterrupt:
 	style()
-	printRed("\n                                   Bye !\n                          Press 'Enter' for exit")
+	printRed("\n                                   Bye !\n                          Press 'Enter' for exit\n                               Total logs : ")
 	if startDDoS == True:
 		logsTotalHours = "\n["+str(hoursPrintTotal)+":"+str(minutePrintTotal)+":"+str(secondsPrintTotal)+"]"
 		logsTotal = " Adress "+str(ipSave)+" Bytes send "+str(bytes)+" Port "+str(port)+" Packets "+str(packetPerSecondTotal)

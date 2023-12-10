@@ -312,6 +312,13 @@ def ddos():
 		hoursPrint = "0" + str(hoursPrint) if hoursPrint < 10 else hoursPrint
 		minutePrint = "0" + str(minutePrint) if minutePrint < 10 else minutePrint
 		secondsPrint = "0" + str(secondsPrint) if secondsPrint < 10 else secondsPrint
+
+		# Conversion du temps d'attaque total en hh:mm:ss
+		(hoursPrintTotal, secondsPrintTotal) = divmod(timeEnd, 3600)
+		(minutePrintTotal, secondsPrintTotal) = divmod(secondsPrintTotal, 60)
+		hoursPrintTotal = "0" + str(hoursPrintTotal) if hoursPrintTotal < 10 else hoursPrintTotal
+		minutePrintTotal = "0" + str(minutePrintTotal) if minutePrintTotal < 10 else minutePrintTotal
+		secondsPrintTotal = "0" + str(secondsPrintTotal) if secondsPrintTotal < 10 else secondsPrintTotal
 		
 		# Envoi du paquet
 		sock.sendto(send.encode(), (ip, port))
@@ -336,13 +343,6 @@ def ddos():
 			# Fin du thread
 			thread.join()
 			exit = "0"
-			
-			# Conversion du temps d'attaque total en hh:mm:ss
-			(hoursPrintTotal, secondsPrintTotal) = divmod(timeEnd, 3600)
-			(minutePrintTotal, secondsPrintTotal) = divmod(secondsPrintTotal, 60)
-			hoursPrintTotal = "0" + str(hoursPrintTotal) if hoursPrintTotal < 10 else hoursPrintTotal
-			minutePrintTotal = "0" + str(minutePrintTotal) if minutePrintTotal < 10 else minutePrintTotal
-			secondsPrintTotal = "0" + str(secondsPrintTotal) if secondsPrintTotal < 10 else secondsPrintTotal
 
 			# Affichage des logs total
 			style()

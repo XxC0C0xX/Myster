@@ -255,7 +255,7 @@ def ddos():
 
 	# Fonction pour lire la console sans interrompre
 	def inputNoInterrupted():
-		global exit, time
+		global exit, time, timeLocal
 		timeLocal = time
 		input, e, o = select.select([sys.stdin], [], [], int(timeLocal))
 
@@ -381,7 +381,7 @@ except KeyboardInterrupt:
 	printRed("\n                                   Bye !")
 	t.sleep(2)
 	sock.close()
+	timeLocal = 0
 	thread.join()
-	exit = "0"
 	os.system("clear")
 	sys.exit()

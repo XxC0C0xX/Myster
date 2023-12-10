@@ -266,13 +266,14 @@ def ddos():
 
 		if input:
 			while timeLocal != 0:
-				print("\n\n")
 				input = sys.stdin.readline().strip()
 				if input == "":
 					exit = ""
 					return exit
+			return 0
 
 	# Définition de thread
+	global thread
 	thread = threading.Thread(target=inputNoInterrupted)
 
 
@@ -387,6 +388,8 @@ try:
 		ddos()
 except KeyboardInterrupt:
 	while True:
+		timeLocal = 0
+		thread.join()
 		style()
 		printRed("\n                                   Bye !\n                          Press 'Enter' for exit")
 		if startDDoS == True:

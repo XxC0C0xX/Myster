@@ -259,6 +259,7 @@ def ddos():
 		
 
 	# Fonction pour lire la console sans interrompre
+	global inputNoInterrupted()
 	def inputNoInterrupted():
 		global exit, time, timeLocal
 		timeLocal = time

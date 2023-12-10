@@ -132,8 +132,9 @@ def now():
 
 
 # Définition des variables, pre setup du ddos
-relaunch = ""
-ipSave = ""
+relaunch = "0"
+ipSave = "0"
+startDDoS = False
 	                     
 
 # Programme principal
@@ -149,7 +150,11 @@ except KeyboardInterrupt:
 	sys.exit()
 
 
-def ddos()
+def ddos():
+
+
+	# Définition des variables globals pour les logs total
+	global logsTotalHours, logsTotal, hoursPrintTotal, minutePrintTotal, secondsPrintTotal, ipSave, bytes, port, packetPerSecondTotal
 	
 
 	# Vérifie l'adresse ip
@@ -297,7 +302,10 @@ def ddos()
 
 	
 	# Coeur du DDoS
-	while True:	
+	while True:
+
+		global startDDoS
+		startDDoS = True
 		
 		# Mise a jour de requete par secondes
 		packetPerSecond += 1
@@ -338,7 +346,9 @@ def ddos()
 
 			# Fin du thread
 			thread.join()
+			
 			exit = "0"
+			startDDoS = False
 
 			# Affichage des logs total
 			style()
@@ -377,6 +387,11 @@ try:
 except KeyboardInterrupt:
 	style()
 	printRed("\n                                   Bye !\n                         Press 'Enter' for exit")
+	if startDDoS == True:
+		logsTotalHours = "\n["+str(hoursPrintTotal)+":"+str(minutePrintTotal)+":"+str(secondsPrintTotal)+"]"
+		logsTotal = " Adress "+str(ipSave)+" Bytes send "+str(bytes)+" Port "+str(port)+" Packets "+str(packetPerSecondTotal)
+		printPurple(logsTotalHours)
+		printGreen(logsTotal)
 	infos = input()
 	os.system("clear")
 	sys.exit()

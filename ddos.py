@@ -132,7 +132,6 @@ def now():
 
 
 # Définition des variables, pre setup du ddos
-global logsTotalHours, logsTotal, hoursPrintTotal, minutePrintTotal, secondsPrintTotal, ipSave, bytes, port, packetsPerSecondTotal
 relaunch = ""
 ipSave = ""
 	                     
@@ -151,6 +150,10 @@ except KeyboardInterrupt:
 
 
 def ddos():
+
+
+	# Définition des variables globals pour les logs total
+	global logsTotalHours, logsTotal, hoursPrintTotal, minutePrintTotal, secondsPrintTotal, ipSave, bytes, port, packetsPerSecondTotal
 	
 
 	# Vérifie l'adresse ip

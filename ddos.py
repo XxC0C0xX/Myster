@@ -291,6 +291,7 @@ def ddos():
 	send = "0"*bytes
 
 	# Création d'un paquet UDP
+	global sock
 	sock = socket.socket(socket.AF_INET, 	socket.SOCK_DGRAM)
 
 	# Heure de fin (en secondes)
@@ -355,6 +356,9 @@ def ddos():
 			# Fin du thread
 			thread.join()
 
+			# Fermeture du paquet
+			sock.close()
+
 			# Remise à zéro des variables
 			exit = "0"
 			startDDoS = False
@@ -409,6 +413,7 @@ except KeyboardInterrupt:
 				print("\n\n")
 				timeLocal = 0
 				thread.join()
+				sock.close()
 				infos = input()
 				break
 			else:

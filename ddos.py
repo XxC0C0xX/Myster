@@ -230,7 +230,7 @@ def ddos():
 			port = 80
 		try:
 			port = int(port)
-			if bytes >= 1 and bytes <= 65534:
+			if port >= 1 and port <= 65534:
 				break
 		except ValueError:
 				pass
